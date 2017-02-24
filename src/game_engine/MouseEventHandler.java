@@ -107,7 +107,7 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
       }
     }
 
-    // Do this if the mouse event is actually the robot moving the cursor back
+    // Do this if the mouse event is actually the robot moving the cursor back...
     if(robotMove)
     {
       // top corner coordinates of scene
