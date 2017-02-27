@@ -36,7 +36,7 @@ import levels.ProceduralMap;
 import levels.TextureMaps;
 import levels.Tile;
 import levels.Tile.TileType;
-//import sound.SoundManager;
+import sound.SoundManager;
 
 /**
  * @author Atle Olson
@@ -80,7 +80,7 @@ public class ZombieHouse3d
   public Scene scene;
 
   private EntityManager entityManager;
-  //SoundManager soundManager;
+  SoundManager soundManager;
   Main main;
   Scenes scenes;
 
@@ -134,10 +134,10 @@ public class ZombieHouse3d
    * Scenes object
    *
    */
-  public ZombieHouse3d(int difficulty, /*SoundManager soundManager,*/ Main main, Scenes scenes)
+  public ZombieHouse3d(int difficulty, SoundManager soundManager, Main main, Scenes scenes)
   {
     this.difficulty = difficulty;
-    //this.soundManager = soundManager;
+    this.soundManager = soundManager;
     this.main = main;
     this.scenes = scenes;
   }
@@ -183,7 +183,7 @@ public class ZombieHouse3d
     // initialize entity manager if not already initialized
     if(entityManager == null)
     {
-      entityManager = new EntityManager(/*soundManager,*/ main, scenes);
+      entityManager = new EntityManager(soundManager, main, scenes);
     }
     else
     {

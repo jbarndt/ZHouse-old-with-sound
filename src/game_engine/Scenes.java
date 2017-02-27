@@ -17,8 +17,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-//import sound.Sound;
-//import sound.SoundManager;
+import sound.Sound;
+import sound.SoundManager;
 import utilities.MapViewerScene;
 
 /**
@@ -28,7 +28,7 @@ import utilities.MapViewerScene;
  */
 public class Scenes 
 {
-  //private SoundManager soundManager;
+  private SoundManager soundManager;
   private Main main;
   
   int winW = 1280;
@@ -57,7 +57,7 @@ public class Scenes
   Slider mapHeight          = new Slider(0, 100, 50);
   Slider rotateSensitivity  = new Slider(0, 20, 5);
   
-  public ZombieHouse3d threeDGameObject = new ZombieHouse3d(0, /*soundManager,*/ main, this);
+  public ZombieHouse3d threeDGameObject = new ZombieHouse3d(0, soundManager, main, this);
   private MapViewerScene mapObject = new MapViewerScene();
   public BorderPane startRoot, twoDGameRoot, settingsRoot, gameOverRoot, loadRoot, winRoot;
   public StackPane threeDGameRoot;
@@ -81,7 +81,7 @@ public class Scenes
       public void handle(ActionEvent event) 
       {
         playButtonSound();
-        //soundManager.playTrack(0);
+        soundManager.playTrack(0);
 
         try
         {
@@ -101,7 +101,7 @@ public class Scenes
       public void handle(ActionEvent event) 
       {
         playButtonSound();
-        //soundManager.playTrack(0);
+        soundManager.playTrack(0);
         try
         {
           main.assignStage(mainMenu);
@@ -136,7 +136,7 @@ public class Scenes
       {
         playButtonSound();
         setUpNewGame(primaryStage);
-        //soundManager.playTrack(0);
+        soundManager.playTrack(0);
       }
     });
 
@@ -438,7 +438,7 @@ public class Scenes
    */  
   public void playButtonSound()
   {
-    //soundManager.playSoundClip(Sound.button);
+    soundManager.playSoundClip(Sound.button);
   }
   
   public void updateWinScreen()
@@ -447,13 +447,13 @@ public class Scenes
   }
   
   /**
-   * @param //soundManager
+   * @param soundManager
    * 
    * Setter for the sound manager
    */  
-  public void setSoundManager(/*SoundManager soundManager*/)
+  public void setSoundManager(SoundManager soundManager)
   {
-    //this.soundManager = soundManager;
+    this.soundManager = soundManager;
   }
   
   /**
@@ -462,7 +462,7 @@ public class Scenes
    */  
   private void createNewGameBoard(int difficulty)
   {
-    threeDGameObject = new ZombieHouse3d(difficulty, /*soundManager,*/ main, this);
+    threeDGameObject = new ZombieHouse3d(difficulty, soundManager, main, this);
   }
 
 

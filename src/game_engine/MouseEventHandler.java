@@ -10,7 +10,7 @@ import entities.Player;
 import javafx.event.EventHandler;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-//import sound.Sound;
+import sound.Sound;
 
 import java.awt.*;
 
@@ -102,7 +102,7 @@ public class MouseEventHandler implements EventHandler<MouseEvent>
       if (event.getButton() == MouseButton.PRIMARY && !player.isAttacking())
       {
         player.setAttacking();
-        //zombiehouse.getEntityManager().soundManager.playSoundClip(Sound.swing);
+        zombiehouse.getEntityManager().soundManager.playSoundClip(Sound.swing);
         zombiehouse.getEntityManager().playerAttack(player.boundingCircle);
       }
     }

@@ -24,7 +24,7 @@ import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import levels.ProceduralMap;
 import levels.Tile;
-//import sound.SoundManager;
+import sound.SoundManager;
 /**
  * @author Atle Olson
  * @author Jeffrey McCall
@@ -88,7 +88,7 @@ public class ZombieBoardRenderer
    */
   public Scene zombieHouse2d(Stage primaryStage)
   {
-    entityManager = new EntityManager(/*new SoundManager(),*/ main, scenes);
+    entityManager = new EntityManager(new SoundManager(), main, scenes);
     gameBoard = ProceduralMap.generateMap(Attributes.Map_Width, Attributes.Map_Height, 2);
     entityManager.player = new Player(20, 30);
     

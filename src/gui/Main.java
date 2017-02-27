@@ -4,7 +4,7 @@ import game_engine.Scenes;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-//import sound.SoundManager;
+import sound.SoundManager;
 
 /**
  * @author Atle Olson 
@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 public class Main extends Application
 {
   public Stage gameStage;
-  //private SoundManager soundManager;
+  private SoundManager soundManager;
   public Scenes scenes;
   
   /**
@@ -28,9 +28,9 @@ public class Main extends Application
     gameStage = primaryStage;
     scenes = new Scenes(primaryStage, this);
 
-    //soundManager = new SoundManager();
-    //scenes.setSoundManager(soundManager);
-    //soundManager.playTrack(0);
+    soundManager = new SoundManager();
+    scenes.setSoundManager(soundManager);
+    soundManager.playTrack(0);
 
     gameStage.setTitle("Zombie House By Nick, Hector, and Sarah");
     gameStage.setScene(scenes.mainMenu);

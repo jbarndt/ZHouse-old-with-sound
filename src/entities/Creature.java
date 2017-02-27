@@ -29,13 +29,13 @@ public abstract class Creature extends Entity
     distanceTraveled += calculateDistance();
     if (distanceTraveled > stepDistance){
       distanceTraveled = 0;
-      //stepSound();
+      stepSound();
     }
   }
   /**
    * Plays sound effects for player and zombies.
    */
-  //public abstract void stepSound();
+  public abstract void stepSound();
   
   /**
    * For zombie and player, calculates distance between the last

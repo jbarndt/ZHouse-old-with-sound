@@ -17,7 +17,7 @@ import javafx.scene.shape.Cylinder;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.transform.Rotate;
 import levels.Tile;
-//import sound.Sound;
+import sound.Sound;
 import utilities.ZombieBoardRenderer;
 
 /**
@@ -873,7 +873,7 @@ public class Zombie extends Creature
   
   /*
    * If zombie is in range of player, play appropriate sound.
-
+*/
   @Override
   public void stepSound()
   {
@@ -890,7 +890,7 @@ public class Zombie extends Creature
             balance);
       }
     }
-  }*/
+  }
   
   /**
    * Calculates Distance for zombies.

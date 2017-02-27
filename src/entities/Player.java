@@ -15,7 +15,7 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Cylinder;
 import javafx.scene.transform.Rotate;
 import levels.Tile;
-//import sound.Sound;
+import sound.Sound;
 import utilities.ZombieBoardRenderer;
 
 import static game_engine.ZombieHouse3d.loadMeshViews;
@@ -456,11 +456,11 @@ public class Player extends Creature
    * Plays player foot step sound
    * 
    */
-  /*@Override
+  @Override
   public void stepSound()
   {
-    //entityManager.soundManager.playSoundClip(Sound.footstep);
-  }*/
+    entityManager.soundManager.playSoundClip(Sound.footstep);
+  }
 
   /**
    * Calculates Distance for camera

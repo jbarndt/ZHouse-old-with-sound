@@ -19,8 +19,8 @@ import javafx.scene.shape.Box;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Shape3D;
 import levels.Tile;
-//import sound.Sound;
-//import sound.SoundManager;
+import sound.Sound;
+import sound.SoundManager;
 import utilities.ZombieBoardRenderer;
 
 /**
@@ -50,7 +50,7 @@ public class EntityManager
   public Set<Zombie> interactingZombies = new HashSet<>();
   int turnCounter = 0;
   private int timekeeper = 0;
-  //public SoundManager soundManager;
+  public SoundManager soundManager;
   public ZombieHouse3d zombieHouse;
   public Scenes scenes;
   public Main main;
@@ -80,9 +80,9 @@ public class EntityManager
    *        The various screens that are seen throughout playing the game, such as
    *        the main menu, the settings menu, the win screen, etc.
    */
-  public EntityManager(/*SoundManager soundManager,*/ Main main, Scenes scenes)
+  public EntityManager(SoundManager soundManager, Main main, Scenes scenes)
   {
-    //this.soundManager = soundManager;
+    this.soundManager = soundManager;
     this.scenes = scenes;
     this.main = main;
     zombies = new ArrayList<>();
@@ -169,7 +169,7 @@ public class EntityManager
     if(distanceFromPlayer(zombie) < .65)
     {
       player.getHit(10);
-      //soundManager.playSoundClip(Sound.grunt);
+      soundManager.playSoundClip(Sound.grunt);
       if(player.getHitPoints() <= 0)
       {
         player.setIsDead();
